@@ -1,1 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>La profe Laura ✨</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: #fff9f5;
+    color: #403653;
+}
+
+/* ---------------- NAVEGACIÓN ---------------- */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 7%;
+    box-shadow: 0 3px 20px rgba(80,60,100,0.08);
+}
+
+.logo {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 28px;
+    color: #72549c;
+}
+
+.logo span {
+    color: #ed7791;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #403653;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #ed7791;
+    transform: translateY(-2px);
+}
+
+/* ---------------- PORTADA ---------------- */
+
+.hero {
+    min-height: 85vh;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background:
+        radial-gradient(circle at 10% 20%, #ffe4ec 0 5%, transparent 6%),
+        radial-gradient(circle at 90% 20%, #e2ddff 0 5%, transparent 6%),
+        linear-gradient(135deg, #fff5f0, #eef5ff);
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.small-title {
+    color: #ed7791;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: clamp(55px, 8vw, 95px);
+    line-height: 0.95;
+    color: #574276;
+}
+
+.hero h1 span {
+    color: #ed7791;
+}
+
+.hero p {
+    margin-top: 25px;
+    font-size: 19px;
+    line-height: 1.7;
+    max-width: 520px;
+}
+
+.explore {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 28px;
+    border-radius: 50px;
+    background: #ed7791;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(237,119,145,0.3);
+    transition: 0.3s;
+}
+
+.explore:hover {
+    transform: translateY(-5px) scale(1.03);
+}
+
+/* ---------------- PERSONAJE ---------------- */
+
+.teacher {
+    width: 320px;
+    height: 390px;
+    background: #fff;
+    border-radius: 50% 50% 45% 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 20px 50px rgba(80,60,100,0.15);
+    position: relative;
+    animation: floating 4s ease-in-out infinite;
+}
+
+.teacher::before {
+    content: "👩🏼‍🏫";
+    font-size: 210px;
+}
+
+.teacher::after {
+    content: "✨";
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 45px;
+}
+
+@keyframes floating {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* ---------------- SECCIONES ---------------- */
+
+section {
+    padding: 90px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 55px;
+    color: #574276;
+}
+
+.section-title p {
+    margin-top: 10px;
+    color: #777;
+}
+
+/* ---------------- TARJETAS ---------------- */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    padding: 35px 25px;
+    border-radius: 25px;
+    text-align: center;
+    background: white;
+    box-shadow: 0 10px 30px rgba(80,60,100,0.08);
+    transition: 0.35s;
+    cursor: pointer;
+    border: 3px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px) rotate(-1deg);
+    border-color: #f4c5d0;
+    box-shadow: 0 20px 40px rgba(80,60,100,0.15);
+}
+
+.card .icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 30px;
+    color: #574276;
+    margin-bottom: 10px;
+}
+
+.card p {
+    line-height: 1.6;
+    color: #666;
+}
+
+/* ---------------- SUPERPODERES ---------------- */
+
+.powers {
+    background: #eeeaff;
+}
+
+.power-box {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.power {
+    background: white;
+    padding: 25px 15px;
+    border-radius: 20px;
+    text-align: center;
+    transition: .3s;
+}
+
+.power:hover {
+    transform: scale(1.05);
+}
+
+.power-icon {
+    font-size: 45px;
+}
+
+.power h3 {
+    margin-top: 10px;
+    color: #574276;
+}
+
+/* ---------------- DIBUJOS ---------------- */
+
+.gallery {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+
+.art {
+    height: 190px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    transition: .3s;
+}
+
+.art:hover {
+    transform: scale(1.04) rotate(2deg);
+}
+
+/* ---------------- SOBRE MI ---------------- */
+
+.about {
+    background: #fff0f4;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 750px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+    text-align: center;
+    padding: 35px;
+    background: #574276;
+    color: white;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 24px;
+}
+
+/* ---------------- MÓVIL ---------------- */
+
+@media(max-width: 800px) {
+
+    .menu {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .teacher {
+        width: 250px;
+        height: 300px;
+    }
+
+    .teacher::before {
+        font-size: 160px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .power-box {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- NAVEGACIÓN -->
+
+<nav>
+
+<div class="logo">
+La profe Laura <span>♥</span>
+</div>
+
+<div class="menu">
+<a href="#inicio">Inicio</a>
+<a href="#sobre-mi">Sobre mí</a>
+<a href="#dibujos">Dibujos</a>
+<a href="#proyectos">Proyectos</a>
+<a href="#recursos">Recursos</a>
+<a href="#ideas">Ideas</a>
+</div>
+
+</nav>
+
+
+<!-- PORTADA -->
+
+<header class="hero" id="inicio">
+
+<div class="hero-text">
+
+<div class="small-title">
+✨ BIENVENID@ A MI RINCÓN ✨
+</div>
+
+<h1>
+Mi pequeño<br>
+<span>universo</span><br>
+educativo
+</h1>
+
+<p>
+Un espacio donde se mezclan la educación,
+la creatividad, las emociones y muchas
+ganas de aprender.
+</p>
+
+<a href="#proyectos" class="explore">
+🚀 Explorar mi portfolio
+</a>
+
+</div>
+
+
+<div class="teacher"></div>
+
+</header>
+
+
+<!-- SOBRE MI -->
+
+<section class="about" id="sobre-mi">
+
+<div class="section-title">
+
+<h2>👩🏼‍🏫 Sobre mí</h2>
+
+<p>Un poquito de la persona que hay detrás de este rincón.</p>
+
+</div>
+
+<div class="about-content">
+
+<p>
+¡Hola! Soy Laura, profe de Educación Infantil.
+Me encanta crear, dibujar, imaginar y buscar
+nuevas formas de convertir el aprendizaje
+en una aventura.
+</p>
+
+<br>
+
+<p>
+Aquí encontrarás algunos de mis proyectos,
+ideas, recursos, ilustraciones y pequeñas
+locuras educativas. 🌸
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PROYECTOS -->
+
+<section id="proyectos">
+
+<div class="section-title">
+
+<h2>📚 Mis proyectos</h2>
+
+<p>Ideas que han cobrado vida dentro y fuera del aula.</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<div class="icon">🦸‍♀️</div>
+
+<h3>Emociones y superpoderes</h3>
+
+<p>
+Un viaje por las emociones utilizando
+personajes, historias y misiones.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">👩‍🚒</div>
+
+<h3>Los oficios</h3>
+
+<p>
+Aprendemos sobre diferentes profesiones
+a través del juego simbólico.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🌱</div>
+
+<h3>Pequeños guardianes</h3>
+
+<p>
+Actividades para descubrir y cuidar
+nuestro planeta.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🔬</div>
+
+<h3>Pequeños científicos</h3>
+
+<p>
+Experimentos y descubrimientos adaptados
+a Educación Infantil.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🎵</div>
+
+<h3>La música nos mueve</h3>
+
+<p>
+Propuestas para aprender y expresarnos
+a través de la música.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">💻</div>
+
+<h3>Pequeños exploradores digitales</h3>
+
+<p>
+Robótica, programación y pensamiento
+computacional en Infantil.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SUPERPODERES -->
+
+<section class="powers" id="ideas">
+
+<div class="section-title">
+
+<h2>✨ ¿Cuál es tu superpoder?</h2>
+
+<p>
+Porque cada niño y cada niña tiene algo especial.
+</p>
+
+</div>
+
+
+<div class="power-box">
+
+<div class="power">
+<div class="power-icon">❤️</div>
+<h3>Emociones</h3>
+</div>
+
+<div class="power">
+<div class="power-icon">🎨</div>
+<h3>Creatividad</h3>
+</div>
+
+<div class="power">
+<div class="power-icon">🧠</div>
+<h3>Curiosidad</h3>
+</div>
+
+<div class="power">
+<div class="power-icon">🤝</div>
+<h3>Cooperación</h3>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DIBUJOS -->
+
+<section id="dibujos">
+
+<div class="section-title">
+
+<h2>🎨 Mis dibujos</h2>
+
+<p>
+Ilustraciones, personajes y pequeñas historias.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+<div class="art" style="background:#ffe2e9;">🌸</div>
+
+<div class="art" style="background:#e3ddff;">🧸</div>
+
+<div class="art" style="background:#dff4ed;">🌈</div>
+
+<div class="art" style="background:#fff0c9;">🐱</div>
+
+<div class="art" style="background:#dceeff;">📚</div>
+
+<div class="art" style="background:#f8dfef;">✨</div>
+
+<div class="art" style="background:#e6f0d9;">🌱</div>
+
+<div class="art" style="background:#ffe4d5;">🦋</div>
+
+</div>
+
+</section>
+
+
+<!-- RECURSOS -->
+
+<section id="recursos" style="background:#f5f2ff;">
+
+<div class="section-title">
+
+<h2>🧩 Recursos</h2>
+
+<p>
+Materiales para llenar el aula de ideas.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">📝</div>
+<h3>Fichas</h3>
+<p>Materiales listos para utilizar en el aula.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎲</div>
+<h3>Juegos</h3>
+<p>Propuestas lúdicas para aprender jugando.</p>
+</div>
+
+<div class="card">
+<div class="icon">📖</div>
+<h3>Cuentos</h3>
+<p>Historias para imaginar, sentir y aprender.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<footer>
+
+✨ Gracias por visitar mi pequeño universo educativo ✨
+
+<br>
+
+La profe Laura ♥ 
+
+</footer>
+
+
+</body>
+</html>
